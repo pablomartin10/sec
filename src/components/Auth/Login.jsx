@@ -1,10 +1,10 @@
-// Componente de autenticación
 import React from 'react';
-export default function Login() {
-    return <div>Login Page</div>;
+
+export default function Login({ onLogin }) {
+    return (
+        <div>
+            <h2>Login</h2>
+            <button onClick={onLogin}>Log in</button>
+        </div>
+    );
 }
-// Componente de registro
-import React from 'react';
-export default function Register() {
-    return <div>Register Page</div>;
-} 

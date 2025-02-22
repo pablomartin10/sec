@@ -7,11 +7,19 @@ import Footer from './components/Layout/Footer';
 export default function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+    const handleLogin = () => {
+        setIsLoggedIn(true); // Cambia el estado a true cuando inicie sesión
+    };
+
     return (
         <div>
             <Header />
             {/* Renderiza el componente basado en el estado isLoggedIn */}
-            {isLoggedIn ? <Form1 /> : <Login />}
+            {isLoggedIn ? (
+                <Form1 />
+            ) : (
+                <Login onLogin={handleLogin} />
+            )}
             <Footer />
         </div>
     );
