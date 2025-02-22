@@ -1,21 +1,18 @@
-src/App.jsx
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
 import Login from './components/Auth/Login';
-import ProtectedRoute from './components/Auth/ProtectedRoute';
 import Form1 from './components/Forms/Form1';
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
 
 export default function App() {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
     return (
-        <Router>
+        <div>
             <Header />
-            <Routes>
-                <Route path="/login" element={<Login />} />
-                <Route path="/form1" element={<ProtectedRoute><Form1 /></ProtectedRoute>} />
-            </Routes>
+            {/* Renderiza el componente basado en el estado isLoggedIn */}
+            {isLoggedIn ? <Form1 /> : <Login />}
             <Footer />
-        </Router>
+        </div>
     );
 }

@@ -1,19 +1,7 @@
-// src/App.jsx
+// src/main.jsx
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './index.css';
 
-function App() {
-  return (
-    <Router>
-      <div>
-        <h1>Security Health Checks</h1>
-        <Routes>
-          <Route path="/" element={<h2>Home Page</h2>} />
-          <Route path="/about" element={<h2>About Page</h2>} />
-        </Routes>
-      </div>
-    </Router>
-  );
-}
-
-export default App;
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
